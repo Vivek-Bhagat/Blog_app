@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import { createSlice } from "@reduxjs/toolkit";
 
 // Redux Toolkit: Define initial state
@@ -25,5 +23,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { login,logout } = authSlice.actions;
+export const { login, logout } = authSlice.actions;
 export default authSlice.reducer;
