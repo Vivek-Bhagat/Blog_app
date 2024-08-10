@@ -27,7 +27,7 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center w-full mt-8 p-5">
+    <div className="flex items-center justify-center w-full  p-5">
       <div
         className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
       >
@@ -43,7 +43,7 @@ function Login() {
           Don&apos;t have any account?&nbsp;
           <Link
             to="/signup"
-            className="font-medium text-primary transition-all duration-200 hover:underline"
+            className="font-medium text-blue-600 transition-all duration-200 hover:underline"
           >
             Sign Up
           </Link>
@@ -72,7 +72,7 @@ function Login() {
                 required: true,
               })}
             />
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full hover:bg-green-600">
               Sign in
             </Button>
           </div>

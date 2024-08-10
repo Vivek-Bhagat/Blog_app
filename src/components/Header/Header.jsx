@@ -86,7 +86,7 @@ export default function Header() {
               ) : null
             )}
             {authStatus && (
-              <li>
+              <li className="list-none">
                 <LogoutBtn />
               </li>
             )}
@@ -94,11 +94,13 @@ export default function Header() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
               href="/login"
-              className="text-sm font-semibold leading-6 text-white hover:text-orange-500 "
+              className="text-sm font-semibold leading-6 text-white hover:text-black bg-green-600 p-2 rounded-lg"
             >
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
+            
           </div>
+          
         </nav>
         <Dialog
           open={mobileMenuOpen}
