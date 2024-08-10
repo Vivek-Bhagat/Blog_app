@@ -19,6 +19,11 @@ export default function Header() {
       active: true,
     },
     {
+      name: "About",
+      slug: "/about",
+      active: true,
+    },
+    {
       name: "Login",
       slug: "/login",
       active: !authStatus,
@@ -41,14 +46,14 @@ export default function Header() {
   ];
 
   return (
-    <div className="bg-transparent mb-10 py-8">
+    <div className=" mb-5 py-8 bg-black flex text-white justify-center items-center ">
       <header className="absolute inset-x-0 top-0 z-50 w-full">
         <nav
           aria-label="Global"
-          className="flex items-center justify-between p-6 lg:px-8"
+          className="flex items-center justify-between p-3 lg:px-8"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
@@ -89,7 +94,7 @@ export default function Header() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
               href="/login"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm font-semibold leading-6 text-white hover:text-orange-500 "
             >
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
