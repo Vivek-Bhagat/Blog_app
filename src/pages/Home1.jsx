@@ -2,7 +2,7 @@
 
 export default function Home1() {
   return (
-    <div className="bg-white">
+    <div className="bg-white p-3">
       <div className="relative isolate px-6 pt-1 lg:px-8">
         <div
           aria-hidden="true"
@@ -20,7 +20,7 @@ export default function Home1() {
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our next round of funding.{" "}
-              <a href="#" className="font-semibold text-indigo-600">
+              <a href="/login" className="font-semibold text-indigo-600">
                 <span aria-hidden="true" className="absolute inset-0" />
                 Read more <span aria-hidden="true">&rarr;</span>
               </a>
@@ -28,12 +28,11 @@ export default function Home1() {
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Data to enrich your online business
+              Data to enrich your online blog posts
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
+              A free platform where you can share your ideas, images , contents
+              and much more ...
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
