@@ -32,48 +32,52 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: (
-          <AuthLayout authentication={false}>
-            <Login />
-          </AuthLayout>
-        ),
-        // element: <Login />
+        // element: (
+        //   <AuthLayout authentication={false}>
+        //     <Login />
+        //   </AuthLayout>
+        // ),
+        element: <Login />,
       },
       {
         path: "/signup",
-        element: (
-          <AuthLayout authentication={false}>
-            <Signup />
-          </AuthLayout>
-        ),
+        // element: (
+        //   <AuthLayout authentication={false}>
+        //     <Signup />
+        //   </AuthLayout>
+        // ),
+        element: <Signup />,
       },
       {
         path: "/all-posts",
-        element: (
-          <AuthLayout authentication>
-            {" "}
-            {/* <AllPosts /> */}
-            <AllPosts />
-          </AuthLayout>
-        ),
+        // element: (
+        //   <AuthLayout authentication>
+        //     {" "}
+        //     {/* <AllPosts /> */}
+        //     <AllPosts />
+        //   </AuthLayout>
+        // ),
+        element: <AllPosts />,
       },
       {
         path: "/add-post",
-        element: (
-          <AuthLayout authentication>
-            {" "}
-            <AddPost />
-          </AuthLayout>
-        ),
+        // element: (
+        //   <AuthLayout authentication>
+        //     {" "}
+        //     <AddPost />
+        //   </AuthLayout>
+        // ),
+        element: <AddPost />,
       },
       {
         path: "/edit-post/:slug",
-        element: (
-          <AuthLayout authentication>
-            {" "}
-            <EditPost />
-          </AuthLayout>
-        ),
+        // element: (
+        //   <AuthLayout authentication>
+        //     {" "}
+        //     <EditPost />
+        //   </AuthLayout>
+        // ),
+        element: <EditPost />,
       },
       {
         path: "/post/:slug",
