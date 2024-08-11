@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
-import { Container, PostCard } from "../components";
+// import { Container, PostCard } from "../components";
+import Container from "../components/container/Container.jsx";
+import PostCard from "../components/PostCard.jsx";
 import Home1 from "./Home1";
 
 function Home() {

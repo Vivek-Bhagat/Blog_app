@@ -1,7 +1,8 @@
 import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Controller } from "react-hook-form";
-import appwriteTinyMce from "../conf/conf";
+// import appwriteTinyMce from "../conf/conf";
+import conf from "../conf/conf";
 
 export default function RTE({ name, control, label, defaultValue = "" }) {
   return (
@@ -15,7 +16,8 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
           <Editor
             initialValue={defaultValue}
             // tinymceScriptSrc="/tinymce/tinymce.min.js"
-            apiKey={import.meta.env.VITE_APPWRITE_TINYMCE}
+            // apiKey={import.meta.env.VITE_APPWRITE_TINYMCE}
+            apiKey={conf.appwriteTinyMce}
             init={{
               initialValue: defaultValue,
               height: 500,

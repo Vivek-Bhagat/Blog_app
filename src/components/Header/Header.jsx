@@ -4,7 +4,9 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { LogoutBtn, Logo } from "../index";
+import LogoutBtn from "./LogoutBtn";
+// import Logo from "../Logo";
+// import { LogoutBtn, Logo } from "../index";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
