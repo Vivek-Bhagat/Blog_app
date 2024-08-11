@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
-// import { Button, Input, RTE, Select } from "..";
 import Button from "../Button.jsx";
 import Input from "../Input.jsx";
 import RTE from "../RTE.jsx";
@@ -24,31 +23,36 @@ export default function PostForm({ post }) {
   const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
-    if (post) {
-      const file = data.image[0]
-        ? await appwriteService.uploadFile(data.image[0])
-        : null;
+    try {
+      if (post) {
+        const file = data.image[0]
+          ? await appwriteService.uploadFile(data.image[0])
+          : null;
 
-      if (file) {
-        appwriteService.deleteFile(post.featuredImage);
-      }
+        if (file) {
+          appwriteService.deleteFile(post.featuredImage);
+        }
 
-      const dbPost = await appwriteService.updatePost(post.$id, {
-        ...data,
-        featuredImage: file ? file.$id : undefined,
-      });
+        const dbPost = await appwriteService.updatePost(post.$id, {
+          ...data,
+          featuredImage: file ? file.$id : post.featuredImage,
+        });
 
-      if (dbPost) {
-        navigate(`/post/${dbPost.$id}`);
-      }
-    } else {
-      const file = await appwriteService.uploadFile(data.image[0]);
+        if (dbPost) {
+          navigate(`/post/${dbPost.$id}`);
+        }
+      } else {
+        let fileId = null;
+        if (data.image[0]) {
+          const file = await appwriteService.uploadFile(data.image[0]);
+          if (file) {
+            fileId = file.$id;
+          }
+        }
 
-      if (file) {
-        const fileId = file.$id;
-        data.featuredImage = fileId;
         const dbPost = await appwriteService.createPost({
           ...data,
+          featuredImage: fileId,
           userId: userData.$id,
         });
 
@@ -56,6 +60,8 @@ export default function PostForm({ post }) {
           navigate(`/post/${dbPost.$id}`);
         }
       }
+    } catch (error) {
+      console.error("Error submitting form:", error);
     }
   };
 
@@ -113,7 +119,7 @@ export default function PostForm({ post }) {
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
-          {...register("image", { required: !post })}
+          {...register("image")}
         />
         {post && (
           <div className="w-full mb-4">
